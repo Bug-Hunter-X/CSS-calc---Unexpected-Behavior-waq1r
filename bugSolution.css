@@ -1,0 +1,17 @@
+To address issues with `calc()`, ensure that units are consistent (e.g., don't mix percentages and pixels directly). Carefully consider operator precedence, using parentheses `()` to group operations as needed to force the intended order. Avoid nesting `calc()` excessively.  Ensure correct whitespace around operators. For complex calculations, thorough testing across browsers is crucial to identify and resolve any compatibility issues. 
+
+Example of corrected code:
+
+/* Instead of: */
+/* width: calc(100% - 50%); */
+/* Use: */
+width: calc(100% - 50px); /* Or use consistent percentages if needed */
+
+/* Instead of (Incorrect Nesting): */
+/* width: calc(calc(100% - 50px) - 25px); */
+/* Use: */
+width: calc(100% - 75px); /* Simplify expression if possible */
+
+/* Always ensure correct whitespace */
+margin: calc(10px + 5px); /* Correct */
+margin:calc(10px+5px);  /* Incorrect, might cause unexpected results*/
